@@ -4357,7 +4357,18 @@ $$
 \mbox{(start function)} & {\mathit{start}} & ::= & \mathsf{start}~{\mathit{funcidx}} \\
 \mbox{(import)} & {\mathit{import}} & ::= & \mathsf{import}~{\mathit{name}}~{\mathit{name}}~{\mathit{externtype}} \\
 \mbox{(export)} & {\mathit{export}} & ::= & \mathsf{export}~{\mathit{name}}~{\mathit{externidx}} \\
-\mbox{(module)} & {\mathit{module}} & ::= & \mathsf{module}~{{\mathit{type}}^\ast}~{{\mathit{import}}^\ast}~{{\mathit{tag}}^\ast}~{{\mathit{global}}^\ast}~{{\mathit{mem}}^\ast}~{{\mathit{table}}^\ast}~{{\mathit{func}}^\ast}~{{\mathit{data}}^\ast}~{{\mathit{elem}}^\ast}~{{\mathit{start}}^?}~{{\mathit{export}}^\ast} \\
+\mbox{(module)} & {\mathit{module}} & ::= & \begin{array}[t]{@{}l@{}} \mathsf{module} \\
+  {\mathit{list}}({\mathit{type}}) \\
+  {\mathit{list}}({\mathit{import}}) \\
+  {\mathit{list}}({\mathit{tag}}) \\
+  {\mathit{list}}({\mathit{global}}) \\
+  {\mathit{list}}({\mathit{mem}}) \\
+  {\mathit{list}}({\mathit{table}}) \\
+  {\mathit{list}}({\mathit{func}}) \\
+  {\mathit{list}}({\mathit{data}}) \\
+  {\mathit{list}}({\mathit{elem}}) \\
+  {{\mathit{start}}^?} \\
+  {\mathit{list}}({\mathit{export}}) \end{array} \\
 \end{array}
 $$
 

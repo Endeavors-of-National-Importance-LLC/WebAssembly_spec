@@ -14040,7 +14040,7 @@ The composite type :math:`(\mathsf{func}~{t_1^\ast}~\rightarrow~{t_2^\ast})` is 
 
 
 
-The sub type :math:`(\mathsf{sub}~{\mathsf{final}^?}~{{\mathit{typeuse}}^\ast}~{\mathit{comptype}})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, i)})` if:
+The sub type :math:`(\mathsf{sub}~{\mathsf{final}^?}~{{\mathit{typeuse}}^\ast}~{\mathit{comptype}})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i})` if:
 
 
    * The length of :math:`{{\mathit{typeuse}}^\ast}` is less than or equal to :math:`1`.
@@ -14049,7 +14049,7 @@ The sub type :math:`(\mathsf{sub}~{\mathsf{final}^?}~{{\mathit{typeuse}}^\ast}~{
 
       * The type use :math:`{\mathit{typeuse}}` is :ref:`valid <valid-val>`.
 
-      * :math:`{\mathit{typeuse}} \prec x, i` is true.
+      * :math:`{\mathit{typeuse}} \prec i` is true.
 
       * The sub type :math:`{{\mathrm{unroll}}}_{C}({\mathit{typeuse}})` is of the form :math:`(\mathsf{sub}~{{\mathit{typeuse}'}^\ast}~{\mathit{comptype}'})`.
 
@@ -14064,7 +14064,7 @@ The sub type :math:`(\mathsf{sub}~{\mathsf{final}^?}~{{\mathit{typeuse}}^\ast}~{
 
 
 
-The recursive type :math:`(\mathsf{rec}~{{\mathit{subtype}}^\ast})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, i)})` if:
+The recursive type :math:`(\mathsf{rec}~{{\mathit{subtype}}^\ast})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i})` if:
 
 
    * Either:
@@ -14075,24 +14075,24 @@ The recursive type :math:`(\mathsf{rec}~{{\mathit{subtype}}^\ast})` is :ref:`val
 
       * The sub type sequence :math:`{{\mathit{subtype}}^\ast}` is of the form :math:`{\mathit{subtype}}_1~{{\mathit{subtype}'}^\ast}`.
 
-      * The sub type :math:`{\mathit{subtype}}_1` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, i)})`.
+      * The sub type :math:`{\mathit{subtype}}_1` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i})`.
 
-      * The recursive type :math:`(\mathsf{rec}~{{\mathit{subtype}'}^\ast})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, i + 1)})`.
-
-
-
-
-The recursive type :math:`(\mathsf{rec})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, i)})`.
+      * The recursive type :math:`(\mathsf{rec}~{{\mathit{subtype}'}^\ast})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i + 1})`.
 
 
 
 
-The recursive type :math:`(\mathsf{rec}~{\mathit{subtype}}_1~{{\mathit{subtype}}^\ast})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, i)})` if:
+The recursive type :math:`(\mathsf{rec})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i})`.
 
 
-   * The sub type :math:`{\mathit{subtype}}_1` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, i)})`.
 
-   * The recursive type :math:`(\mathsf{rec}~{{\mathit{subtype}}^\ast})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, i + 1)})`.
+
+The recursive type :math:`(\mathsf{rec}~{\mathit{subtype}}_1~{{\mathit{subtype}}^\ast})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i})` if:
+
+
+   * The sub type :math:`{\mathit{subtype}}_1` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i})`.
+
+   * The recursive type :math:`(\mathsf{rec}~{{\mathit{subtype}}^\ast})` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i + 1})`.
 
 
 
@@ -14102,7 +14102,7 @@ The defined type :math:`({\mathit{rectype}} {.} i)` is :ref:`valid <valid-val>` 
 
    * Let :math:`{C'}` be the same context as :math:`C`, but with the sub type sequence :math:`{{\mathit{subtype}}^{n}}` prepended to the field :math:`\mathsf{recs}`.
 
-   * Under the context :math:`{C'}`, the recursive type :math:`{\mathit{rectype}}` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(x, 0)})`.
+   * Under the context :math:`{C'}`, the recursive type :math:`{\mathit{rectype}}` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{0})`.
 
    * The recursive type :math:`{\mathit{rectype}}` is of the form :math:`(\mathsf{rec}~{{\mathit{subtype}}^{n}})`.
 
@@ -17696,7 +17696,7 @@ The context :math:`C` is :ref:`valid <valid-val>` if:
 
    * For all :math:`{\mathit{st}}` in :math:`{{\mathit{st}}^\ast}`:
 
-      * Under the context :math:`\{ \mathsf{types}~{{\mathit{dt}}^{n}},\;\allowbreak \mathsf{recs}~{{\mathit{st}}^{m}},\;\allowbreak \mathsf{return}~\epsilon \}`, the sub type :math:`{\mathit{st}}` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{(n, i)})`.
+      * Under the context :math:`\{ \mathsf{types}~{{\mathit{dt}}^{n}},\;\allowbreak \mathsf{recs}~{{\mathit{st}}^{m}},\;\allowbreak \mathsf{return}~\epsilon \}`, the sub type :math:`{\mathit{st}}` is :ref:`valid <valid-val>` for :math:`({\mathsf{ok}}{i})`.
 
    * For all :math:`{\mathit{jt}}` in :math:`{{\mathit{jt}}^\ast}`:
 
@@ -24457,21 +24457,13 @@ The instruction sequence :math:`(\mathsf{block}~{\mathit{blocktype}}~{{\mathit{i
 #. Return :math:`{{\mathit{mmt}}}{{}[ {:=}\, {{\mathit{dt}}^\ast} ]}`.
 
 
-:math:`{\mathit{typeuse}} \prec x, i`
-.....................................
+:math:`{\mathit{typeuse}} \prec i`
+..................................
 
 
-1. If :math:`{\mathit{typeuse}}` is defined type, then:
+1. If :math:`{\mathit{typeuse}}` is not some :math:`\mathsf{rec} {.} n`, then:
 
    a. Return true.
-
-#. If :math:`{\mathit{typeuse}}` is some :math:`{\mathit{typeidx}}`, then:
-
-   a. Let :math:`{\mathit{typeidx}}` be the type use :math:`{\mathit{typeuse}}`.
-
-   #. Return :math:`{\mathit{typeidx}} < x`.
-
-#. Assert: Due to validation, :math:`{\mathit{typeuse}}` is some :math:`\mathsf{rec} {.} n`.
 
 #. Let :math:`(\mathsf{rec} {.} j)` be the destructuring of :math:`{\mathit{typeuse}}`.
 
@@ -27795,11 +27787,11 @@ Comptype_ok/func
   - the result type t_2* is valid.
 
 Subtype_ok2
-- the sub type (SUB FINAL? typeuse* comptype) is valid for (OK x i) if:
+- the sub type (SUB FINAL? typeuse* comptype) is valid for (OK i) if:
   - |typeuse*| is less than or equal to 1.
   - For all typeuse in typeuse*:
     - the type use typeuse is valid.
-    - $before(typeuse, x, i) is true.
+    - $before(typeuse, i) is true.
     - the sub type $unrollht(C, typeuse) is (SUB ?() typeuse'* comptype').
   - comptype'* is the concatenation of all such comptype'.
   - the composite type comptype is valid.
@@ -27807,26 +27799,26 @@ Subtype_ok2
     - comptype matches the composite type comptype'.
 
 Rectype_ok2
-- the recursive type (REC subtype*) is valid for (OK x i) if:
+- the recursive type (REC subtype*) is valid for (OK i) if:
   - Either:
     - the sub type sequence subtype* is [].
   - Or:
     - subtype* is [subtype_1] :: subtype'*.
-    - the sub type subtype_1 is valid for (OK x i).
-    - the recursive type (REC subtype'*) is valid for (OK x (i + 1)).
+    - the sub type subtype_1 is valid for (OK i).
+    - the recursive type (REC subtype'*) is valid for (OK (i + 1)).
 
 Rectype_ok2/empty
-- the recursive type (REC []) is valid for (OK x i).
+- the recursive type (REC []) is valid for (OK i).
 
 Rectype_ok2/cons
-- the recursive type (REC [subtype_1] :: subtype*) is valid for (OK x i) if:
-  - the sub type subtype_1 is valid for (OK x i).
-  - the recursive type (REC subtype*) is valid for (OK x (i + 1)).
+- the recursive type (REC [subtype_1] :: subtype*) is valid for (OK i) if:
+  - the sub type subtype_1 is valid for (OK i).
+  - the recursive type (REC subtype*) is valid for (OK (i + 1)).
 
 Deftype_ok
 - the defined type (_DEF rectype i) is valid if:
   - the context C' is the context C with .RECS prepended by subtype^n.
-  - Under the context C', the recursive type rectype is valid for (OK x 0).
+  - Under the context C', the recursive type rectype is valid for (OK 0).
   - rectype is (REC subtype^n).
   - i is less than n.
 
@@ -29683,7 +29675,7 @@ Context_ok
   - For all dt in dt*:
     - Under the context { TYPES: dt^n[0 : i]; RETURN: ?() }, the defined type dt is valid.
   - For all st in st*:
-    - Under the context { TYPES: dt^n; RECS: st^m; RETURN: ?() }, the sub type st is valid for (OK n i).
+    - Under the context { TYPES: dt^n; RECS: st^m; RETURN: ?() }, the sub type st is valid for (OK i).
   - For all jt in jt*:
     - Under the context C_0, the tag type jt is valid.
   - For all gt in gt*:
@@ -32892,15 +32884,11 @@ clos_moduletype C mmt
 1. Let dt* be $clos_deftypes(C.TYPES).
 2. Return $subst_all_moduletype(mmt, dt*).
 
-before typeuse x i
-1. If typeuse is deftype, then:
+before typeuse i
+1. If typeuse is not REC, then:
   a. Return true.
-2. If typeuse is some _IDX, then:
-  a. Let (_IDX typeidx) be typeuse.
-  b. Return (typeidx < x).
-3. Assert: Due to validation, typeuse is some REC.
-4. Let (REC j) be typeuse.
-5. Return (j < i).
+2. Let (REC j) be typeuse.
+3. Return (j < i).
 
 unrollht C heaptype
 1. If heaptype is deftype, then:
